@@ -1,0 +1,6 @@
+*.log
+body.html
+rss.xml
+
+.vscode/
+__pycache__/
