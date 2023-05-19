@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 
+# 循环执行任务的脚本，将OneDrive中bts_mount目录下的文件移动到bts目录下
+# 因为rclone的mount有一定延迟，所以每隔一段时间就执行一次rclone sync
+
 import os
 import time
 import sys
