@@ -1,5 +1,6 @@
 *.log
 body.html
+head.html
 rss.xml
 
 .vscode/
