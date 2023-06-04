@@ -3,5 +3,8 @@ body.html
 head.html
 rss.xml
 
+test.*
+fin_notifi.py
+
 .vscode/
 __pycache__/
