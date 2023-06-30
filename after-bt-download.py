@@ -124,7 +124,7 @@ if __name__ == '__main__':
     target = find_dir(dir_list, file_name)
     # mv file to dir
     cmd = "cp -n " + file_path_name + " " + DISK + \
-        "/'" + UPLOADED + "'/'" + target + "'/"
+        "/'" + UPLOADED + "'/\"" + target + "\"/"
     if DEBUG:
         write_log("execute : " + cmd)
     sta_code = os.system(cmd)
@@ -134,8 +134,8 @@ if __name__ == '__main__':
     # sys.exit(0)
     # update list
     if UPDATE_LIST:
-        os.system("/root/code/updateList.py '" +
-                  target + "' '" + file_name_org+"'")
+        os.system("/root/code/updateList.py \"" +
+                  target + "\" \"" + file_name_org+"\"")
 
     # sleep random time
     if DEBUG:
