@@ -91,8 +91,10 @@ if __name__ == '__main__':
     argv = sys.argv
     if DEBUG:
         write_log("number of argv is :\t" + str(len(argv)))
-    for i in argv:
-        write_log("argv " + i)
+        for i in argv:
+            write_log("argv " + i)
+    else :
+        write_log("argv "+argv[1])
     write_log('-----------------------')
     file_path_name = argv[2] + '"' + argv[1] + '"'
     # use / to find file name
@@ -147,8 +149,8 @@ if __name__ == '__main__':
         wait_time += 1
         if wait_time > 300:
             break
-
-    write_log(file_path_name+" :\n\tstart sync after wait times: "+str(wait_time))
+    if DEBUG:
+        write_log(file_path_name+" :\n\tstart sync after wait times: "+str(wait_time))
     sta_code = os.system("rclone sync " + DISK + "/" + "'" + UPLOADED +
                          "'" + " OneDrive:/forShare/动漫-更新中")
     write_log(file_path_name +
