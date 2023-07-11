@@ -53,13 +53,6 @@ def judge_if_target(file_path_name, file_name):
     global mode
     if '[ANi]' in file_name:
         return
-    elif '[Lilith-Raws]' in file_name and '[Baha]' in file_name:
-        return
-    elif '[SweetSub]' in file_name and 'Heavenly Delusion' in file_name:
-        return
-    elif '[BeanSub]' in file_name and 'Vinland_Saga_S2' in file_name:
-        mode = Mode.SECOND
-        return
     elif '[Nekomoe kissaten]' in file_name and ('U149' in file_name or 'Skip to Loafer' in file_name):
         mode = Mode.SECOND
         return
