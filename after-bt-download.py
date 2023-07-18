@@ -53,12 +53,6 @@ def judge_if_target(file_path_name, file_name):
     global mode
     if '[ANi]' in file_name:
         return
-    elif '[Nekomoe kissaten]' in file_name and ('U149' in file_name or 'Skip to Loafer' in file_name):
-        mode = Mode.SECOND
-        return
-    elif '[BeanSub&FZSD]' in file_name and 'Jigokuraku' in file_name:
-        mode = Mode.SECOND
-        return
     else:
         write_log('exit for not target file')
         sys.exit(0)

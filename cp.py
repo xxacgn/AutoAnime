@@ -13,7 +13,7 @@ DST = "/root/bts"
 LOG = "/root/code/cp.log"
 
 def my_task(times: int):
-    if times >= 8:
+    if times >= 6:
         stacode = os.system("rclone sync OneDrive:/bts /root/bts")
         if stacode != 0:
             os.system("echo '"+time.asctime(time.localtime(time.time())) +
