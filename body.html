@@ -1,0 +1,57 @@
+<div id="customize"  hidden>
+    <div>
+        <br>
+        <center class="dibu">
+            <div style=" line-height: 20px;font-size: 10pt;font-weight: bold;">
+                <span>
+                    "
+                    <span style="color: rgb(68,142,247); font-weight: bold;" id="hitokoto">Nothing is impossible.</span> "
+                </span>
+               
+            </div>
+            <div class="foot-img">
+                <img src="" alt="">
+                <!--后台入口-->
+                <span class="nav-item">
+                    <a class="nav-link" href="/@manage" target="_blank">
+                        <i class="fa-solid fa-folder-gear" style="color:#409EFF;" aria-hidden="true">
+                        </i>
+                        管理 |
+                    </a>
+                </span>
+                <!--版权，请尊重作者-->
+                <span class="nav-item">
+                    <a class="nav-link" href="https://github.com/Xhofe/alist" target="_blank">
+                        <i class="fa-solid fa-copyright" style="color:#409EFF;" aria-hidden="true">
+                        </i>
+                        Alist |
+                    </a>
+                </span>
+                <!-- Github link -->
+                <span class="nav-item">
+                    <a class="nav-link" href="https://github.com/hackerMonica/AutoAnime" target="_blank">
+                        <i class="fa-solid fa-copyright" style="color:#409EFF;" aria-hidden="true">
+                        </i>
+                        仓库
+                    </a>
+                </span>
+            </div>
+        </center>
+        <br>
+    </div>
+<!--延迟加载范围到这里结束-->
+</div>
+<script>
+// 获取需要延迟加载的内容的元素
+var delayedContent = document.getElementById('customize');
+// 隐藏该元素
+delayedContent.style.display = 'none';
+
+let interval = setInterval(() => {
+        if (document.getElementsByClassName('title hope-stack hope-c-dhzjXW hope-c-PJLV hope-c-PJLV-ipqyVI-css')) {
+            document.querySelector("#customize").removeAttribute("hidden");
+            document.querySelector("#customize").style.display = "block";
+            clearInterval(interval);
+        }
+    }, 200);
+</script>

@@ -1,0 +1,153 @@
+<script src="https://polyfill.io/v3/polyfill.min.js?features=String.prototype.replaceAll"></script>
+<style>
+    /*去除大小条目*/
+    /*名称*/
+
+    /*大小*/
+
+    /*日期*/
+
+    /* 去除通知栏 右上角 X */
+    /*.notify-render .hope-close-button {
+    //  display: none;
+    //}*/
+    /*白天背景图*/
+    .hope-ui-light {
+        background-image: url("https://s3.bmp.ovh/imgs/2023/05/20/b84057f50f5dbb2c.jpg") !important;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position-x: right;
+    }
+
+    /*夜间背景图*/
+    .hope-ui-dark {
+        background-image: url("https://s3.bmp.ovh/imgs/2023/03/15/63f3b62218b67824.jpg") !important;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position-x: center;
+    }
+
+    /*主列表白天模式透明*/
+    .obj-box.hope-stack.hope-c-dhzjXW.hope-c-PJLV.hope-c-PJLV-igScBhH-css {
+        background-color: rgba(255, 255, 255, 0.6) !important;
+    }
+
+    /*主列表夜间模式透明*/
+    .obj-box.hope-stack.hope-c-dhzjXW.hope-c-PJLV.hope-c-PJLV-iigjoxS-css {
+        background-color: rgb(0 0 0 / 30%) !important;
+    }
+
+    /*readme白天模式透明*/
+    .hope-c-PJLV.hope-c-PJLV-ikSuVsl-css {
+        background-color: rgba(255, 255, 255, 0.6) !important;
+    }
+
+    /*readme夜间模式透明*/
+    .hope-c-PJLV.hope-c-PJLV-iiuDLME-css {
+        background-color: rgb(0 0 0 / 30%) !important;
+    }
+
+    /*顶部右上角切换按钮透明*/
+    .hope-ui-light .hope-c-ivMHWx-hZistB-cv.hope-icon-button {
+        background-color: rgba(255, 255, 255, 0.1) !important;
+    }
+
+    .hope-ui-dark .hope-c-ivMHWx-hZistB-cv.hope-icon-button {
+        background-color: rgb(0 0 0 / 10%) !important;
+    }
+
+    /*右上角按钮弹出列表透明*/
+    /*.hope-menu__content.hope-c-zbPwS.hope-c-PJLV.hope-c-PJLV-iSMXDf-css{
+    //  background-color: rgba(0, 0, 0, 0)!important;
+    //  backdrop-filter: blur(2px)!important;
+    //}*/
+    /*右下角侧边栏按钮透明 第一个是白天 第二个是夜间*/
+    .hope-ui-light .hope-c-PJLV-ijgzmFG-css {
+        background-color: rgba(255, 255, 255, 0.3) !important;
+    }
+
+    .hope-ui-dark .hope-c-PJLV-ijgzmFG-css {
+        background-color: rgb(0 0 0 / 30%) !important;
+    }
+
+    /*白天模式代码块透明*/
+    .hope-ui-light pre {
+        background-color: rgba(255, 255, 255, 0.1) !important;
+    }
+
+    /*夜间模式代码块透明*/
+    .hope-ui-dark pre {
+        background-color: rgba(255, 255, 255, 0) !important;
+    }
+
+    /*移除本地設置中的 Aria2 RPC 鏈接 與 Aria2 RPC 密鑰 顯示後*/
+    .hope-stack.hope-c-dhzjXW.hope-c-PJLV.hope-c-PJLV-ikjnSaO-css {
+        display: none !important;
+    }
+
+    /*移除搜索中的鍵盤圖(請放自定義頭部)*/
+    .hope-stack.hope-c-dhzjXW.hope-c-PJLV.hope-c-PJLV-ihYBJPK-css {
+        display: none !important;
+    }
+
+    /*白天模式 搜索主体+毛玻璃*/
+    .hope-ui-light .hope-c-PJLV-iiBaxsN-css {
+        background-color: rgba(255, 255, 255, 0.2) !important;
+        backdrop-filter: blur(3px) !important;
+    }
+
+    /*白天模式 搜索栏输入框+毛玻璃*/
+    .hope-ui-light .hope-c-kvTTWD-hYRNAb-variant-filled {
+        background-color: rgba(255, 255, 255, 0.2) !important;
+        backdrop-filter: blur(1px) !important;
+    }
+
+    /*白天模式 搜索按钮+毛玻璃*/
+    .hope-ui-light .hope-c-PJLV-ikEIIxw-css {
+        background-color: rgba(255, 255, 255, 0.2) !important;
+        backdrop-filter: blur(3px) !important;
+        padding: var(--hope-space-1) !important;
+    }
+
+    /*夜间模式搜索主体+毛玻璃*/
+    .hope-ui-dark .hope-c-PJLV-iiBaxsN-css {
+        background-color: rgb(0 0 0 / 10%) !important;
+        backdrop-filter: blur(4px) !important;
+    }
+
+    /*夜间模式搜索栏+毛玻璃*/
+    .hope-ui-dark .hope-c-kvTTWD-hYRNAb-variant-filled {
+        background-color: rgb(0 0 0 / 10%) !important;
+        backdrop-filter: blur(1px) !important;
+    }
+
+    /*夜间模式 搜索按钮+毛玻璃*/
+    .hope-ui-dark .hope-c-PJLV-ikEIIxw-css {
+        background-color: rgb(0 0 0 / 10%) !important;
+        backdrop-filter: blur(4px) !important;
+        padding: var(--hope-space-1) !important;
+    }
+
+    /*视频列表透明*/
+    /*.hope-select__content.hope-c-XJURY.hope-c-PJLV.hope-c-PJLV-ijpihTg-css {}*/
+
+    /*去掉底部*/
+    .footer {
+        display: none !important;
+    }
+
+    /*全局字体*/
+    * {
+        font-family: LXGW WenKai
+    }
+
+    * {
+        font-weight: bold
+    }
+
+    body {
+        font-family: LXGW WenKai;
+    }
+</style>

@@ -1,6 +1,4 @@
 *.log
-body.html
-head.html
 rss.xml
 
 test.*
