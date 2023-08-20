@@ -13,14 +13,14 @@ DST = "/root/bts"
 LOG = "/root/code/cp.log"
 
 def my_task(times: int):
-    if times >= 6:
+    if times > 6:
         stacode = os.system("rclone sync OneDrive:/bts /root/bts")
         if stacode != 0:
             os.system("echo '"+time.asctime(time.localtime(time.time())) +
                       " : rclone sync failed \n' >> " + LOG)
     
     list = os.listdir(SRC)
-    random_time = random.randint(4, 12)
+    random_time = random.randint(10, 20)
     if not bool(list):
         time.sleep(random_time)
     else:
