@@ -20,7 +20,7 @@ def my_task(times: int):
                       " : rclone sync failed \n' >> " + LOG)
     
     list = os.listdir(SRC)
-    random_time = random.randint(10, 20)
+    random_time = random.randint(20, 40)
     if not bool(list):
         time.sleep(random_time)
     else:
