@@ -14,4 +14,4 @@ rssGen_rssUp.py : 处理生成rss订阅文件并发布，但是灵车
 
 动漫网站：[anime-web](https://hackermonica.me)
 
-网站搭建指北：[blog](https://blog.hackermonica.me/2023/09/08/anime-web-build/#%E5%9C%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E8%BF%90%E8%A1%8Calist)
+网站搭建指北：[blog](https://blog.hackermonica.me/2023/09/08/anime-web-build/)
