@@ -53,6 +53,8 @@ def judge_if_target(file_path_name, file_name):
     global mode
     if '[ANi]' in file_name:
         return
+    elif '[Comicat&Romanticat]' in file_name:
+        mode = Mode.SECOND
     else:
         write_log('exit for not target file')
         sys.exit(0)
@@ -65,8 +67,12 @@ def extract_name():
         file_name = re.split(r'\[|\]', file_name)[2]
         # delete numbers at end
         index = len(file_name) - 1
+        back = index
         while file_name[index] != '-':
             index -= 1
+            if index < 0:
+                index = back
+                break
         file_name = file_name[:index].strip()
         index = len(file_name) - 1
         while file_name[index] == '.' or file_name[index] == ' ':
