@@ -12,23 +12,41 @@ SRC = "/root/bts_mount"
 DST = "/root/bts"
 LOG = "/root/code/cp.log"
 
+TIME_LIMIT = 6 * 60  # 时间限制，单位为秒
+
+def clean_old_files():
+    now = time.time()  # 获取当前时间
+    for filename in os.listdir(SRC):
+        filepath = os.path.join(SRC, filename)
+        if os.path.isfile(filepath):  # 确保是文件，不是文件夹
+            file_time = os.path.getmtime(filepath)  # 获取文件的最后修改时间
+            if now - file_time > TIME_LIMIT:  # 如果文件的最后修改时间超过6分钟
+                os.remove(filepath)  # 删除文件
+                os.system("echo '"+time.asctime(time.localtime(time.time())) +
+                          " : remove old file "+filename+" \n' >> " + LOG)
+
 def my_task(times: int):
-    if times > 6:
+    if times >= 6:
         stacode = os.system("rclone sync OneDrive:/bts /root/bts")
         if stacode != 0:
             os.system("echo '"+time.asctime(time.localtime(time.time())) +
                       " : rclone sync failed \n' >> " + LOG)
     
     list = os.listdir(SRC)
-    random_time = random.randint(20, 40)
-    if not bool(list):
-        time.sleep(random_time)
-    else:
+    random_time = random.randint(4, 12)
+    if bool(list):
+        stacode = os.system("rclone sync OneDrive:/bts /root/bts")
         # move files in list to DST
-        os.system("mv "+SRC+"/* "+DST+"/")
-        os.system("echo '"+time.asctime(time.localtime(time.time())) +
-                  " : mv " + str(list) + "\n' >> " + LOG)
-        time.sleep(random_time)
+        os.system("cp "+SRC+"/* "+DST+"/")
+        
+        if stacode != 0:
+            os.system("echo '"+time.asctime(time.localtime(time.time())) +
+                      " : rclone sync failed \n' >> " + LOG)
+        clean_old_files()
+        
+    time.sleep(random_time)
+    
+    
 
 
 class TaskService(Service):
