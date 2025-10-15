@@ -12,6 +12,6 @@ cp.py : 定时移动文件的脚本，用来同步服务器端文件，从而跨
 rssGen_rssUp.py : 处理生成rss订阅文件并发布，但是灵车
 ```
 
-动漫网站：[anime-web](https://hackermonica.me)
+动漫网站：[anime-web](https://monica.moe)
 
-网站搭建指北：[blog](https://blog.hackermonica.me/2023/09/08/anime-web-build/)
+网站搭建指北：[blog](https://blog2.monica.moe/2023/09/08/anime-web-build/)
